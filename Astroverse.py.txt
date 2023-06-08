@@ -1,0 +1,366 @@
+def easy_l1():
+    global score 
+    score=0# so that it is visible to the whole program
+    print("INSTRUCTIONS: the easy level consists of 5 questions with one trick question")
+    print("Every question has 2 chances, and the trick question has 3 chances.")
+    print("Each correct answer earns a point. Good luck!\n")
+    input("Press enter to begin!")
+    print("Let's go! Here comes the first question:\n")
+    
+    # first question---------------------------------------------------------------------------------------------------
+    attempt = 0
+    while attempt < 2:
+        first_a = input('Which is the closest star to Earth? ')
+        first_al = first_a.lower()
+        if first_al == 'sun':
+            print("Correct answer! Let's go to the next one!\n")
+            score +=1
+            easy_q2(score)  # the function for the next question is called here
+            break
+        else:
+            print('Incorrect answer. Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Out of attempts.the correct answer is "sun", Moving on to the next question.\n')
+        easy_q2(score)
+
+# second question---------------------------------------------------------------------------------------------------
+def easy_q2(score):
+   
+    attempt = 0
+    while attempt < 2:
+        second_a = input("What is Earth's natural satellite? ")
+        second_al = second_a.lower()
+        if second_al == 'moon':
+            print("Hooray! You're absolutely right. Let's go to the next one!\n")
+            score += 1
+            easy_q3(score)  # the function for the next question is called here
+            break
+        else:
+            print('Oh no! Incorrect answer. Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Out of attempts.The right answer is "moon", Better luck next time. Moving on to the next question.\n')
+        easy_q3(score)
+
+# third question----------------------------------------------------------------------------------------------------
+def easy_q3(score):
+    
+    attempt = 0
+    while attempt < 2:
+        third_a = input("What is the largest planet in our solar system? ")
+        third_al = third_a.lower()
+        if third_al == 'jupiter':
+            print("Oh yeah, you are right! Let's try the 4th question now!\n")
+            score +=1
+            easy_q4(score)
+            break
+        else:
+            print('Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print(' Better luck next time.The right answer is "jupiter", Moving on to the 4th question.\n')
+        easy_q4(score)
+
+# fourth question--------------------------------------------------------------------------------------------------
+
+def easy_q4(score):
+    
+    attempt = 0
+    while attempt < 2:
+        fourth_a = input("Which planet in our solar system is called the red planet? ")
+        fourth_al = fourth_a.lower()
+        if fourth_al == 'mars':
+            print("Cool! Now comes the trick question.\n")
+            score += 1
+            easy_q5(score)
+            break
+        else:
+            print('Uh oh, try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Not bad.The correct answer to the question is "mars", Better luck next time.\n')
+        easy_q5(score)
+
+# 5th question------------------------------------------------------------------------------------------------------
+def easy_q5(score):
+    
+    attempt = 0
+    while attempt < 2:
+        fifth_a = input("What is the fastest thing in the universe? ")
+        fifth_al = fifth_a.lower()
+        if fifth_al == 'light':
+            print("Amazing!!\n")
+            score +=1
+            print("the total score is: ",score)
+            if score == 5:
+                print('you were incredible you got every question right!!,you are a quiz champion!!')
+            elif score == 4:
+                print("Great job! You scored 4 out of 5! You're almost a quiz champion!")
+            elif score == 3:
+                print('Your Score: 3 out of 5')
+            elif score == 2:
+                print('your score is 2 out of 5')
+            elif score == 1:
+                print('your score is 1 out of 5')
+            elif score ==0:
+                print("Oops! It looks like you scored 0 out of 5.\n Don't worry, you can always try again and improve your knowledge. Keep learning and challenging yourself!")
+            break
+        else:
+            print('Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Not bad.The correct answer to the questions is "light". Better luck next time.')
+        print("the total score is: ",score)
+
+def medium_l():
+    global score
+    score = 0
+    print("INSTRUCTIONS: the medium level consists of 5 questions with one trick question")
+    print("Every question has 2 chances, and the trick question has 3 chances.")
+    print("Each correct answer earns a point. Good luck!\n")
+    input("Press enter to begin!")
+    print("Let's go! Here comes the first question:\n")
+    # first question---------------------------------------------------------------------------------------------------
+    attempt = 0
+    while attempt < 2:
+        first_a = input('What is the closest planet to the Sun? ')
+        first_al = first_a.lower()
+        if first_al == 'mercury':
+            print("Correct answer! Let's go to the next one!\n")
+            score +=1
+            medium_q2(score)  # the function for the next question is called here
+           
+            break
+        else:
+            print('Incorrect answer. Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Out of attempts.The right answer to the question is "mercury", Moving on to the next question.\n')
+        medium_q2(score)
+
+# second question---------------------------------------------------------------------------------------------------
+def medium_q2(score):
+    attempt = 0
+    while attempt < 2:
+        second_a = input("Which planet has the most moons in our solar system? ")
+        second_al = second_a.lower()
+        if second_al == 'saturn':
+            print("Hooray! You're absolutely right. Let's go to the next one!\n")
+            score +=1
+            medium_q3(score)  # the function for the next question is called here
+            
+            break
+        else:
+            print('Oh no! Incorrect answer. Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Out of attempts.The correct answer is "saturn", Better luck next time. Moving on to the next question.\n')
+        medium_q3(score)
+
+# third question----------------------------------------------------------------------------------------------------
+def medium_q3(score):
+    attempt = 0
+    while attempt < 2:
+        third_a = input("What is the name of the first satellite launched into space? ")
+        third_al = third_a.lower()
+        if third_al == 'sputnik 1':
+            print("Oh yeah, you are right! Let's try the 4th question now!\n")
+            score +=1
+            medium_q4(score)
+            break
+        else:
+            print('Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('The right answer to the question is "sputnik 1", Better luck next time. Moving on to the 4th question.\n')
+        medium_q4(score)
+
+# fourth question--------------------------------------------------------------------------------------------------
+
+def medium_q4(score):
+    attempt = 0
+    while attempt < 2:
+        fourth_a = input("What is the largest volcano in our solar system? ")
+        fourth_al = fourth_a.lower()
+        if fourth_al == 'olympus mons':
+            print("Cool! Now comes the trick question.\n")
+            score +=1
+            medium_q5(score)
+            break
+        else:
+            print('Uh oh, try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Not bad.the answer to the question is "olympus mons", Better luck next time.\n')
+        medium_q5(score)
+
+
+# 5th question------------------------------------------------------------------------------------------------------
+def medium_q5(score):
+    attempt = 0
+    while attempt < 2:
+        fifth_a = input("What is the name of the planet known as the 'Evening Star'?")
+        fifth_al = fifth_a.lower()
+        if fifth_al == 'venus':
+            print("Amazing!!\n")
+            print('In this question, the term "Evening Star" is often used to refer to Venus because \nit is often visible in the evening sky and appears as a bright, shining object.\n However, it is not actually a star but a planet. ')
+        
+            score +=1
+            print('total score is :',score)
+            if score == 5:
+                print('you were incredible you got every question right!!,you are a quiz champion!!')
+            elif score == 4:
+                print("Great job! You scored 4 out of 5! You're almost a quiz champion!")
+            elif score == 3:
+                print('Your Score: 3 out of 5')
+            elif score == 2:
+                print('your score is 2 out of 5')
+            elif score == 1:
+                print('your score is 1 out of 5')
+            elif score == 0:
+                print("Oops! It looks like you scored 0 out of 5.\n Don't worry, you can always try again and improve your knowledge. Keep learning and challenging yourself!")
+            
+            break
+        else:
+            print('Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Not bad. Better luck next time.\n')
+        print('In this question, the term "Evening Star" is often used to refer to Venus because \nit is often visible in the evening sky and appears as a bright, shining object.\n However, it is not actually a star but a planet. ')
+        
+        print('total score is :',score)
+
+def hard_l():
+    global score
+    score =0
+    print("INSTRUCTIONS: the hard level consists of 5 questions with one trick question")
+    print("Every question has 2 chances, and the trick question has 3 chances.")
+    print("Each correct answer earns a point. Good luck!\n")
+    input("Press enter to begin!")
+    print("Let's go! Here comes the first question:\n")
+    # first question---------------------------------------------------------------------------------------------------
+    attempt = 0
+    while attempt < 2:
+        first_a = input('What is the process by which a star collapses under its own gravity after exhausting its nuclear fuel?')
+        first_al = first_a.lower()
+        if first_al == 'supernova':
+            print("Correct answer! Let's go to the next one!\n")
+            score +=1
+            hard_q2(score)  # the function for the next question is called here
+            break
+        else:
+            print('Incorrect answer. Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Out of attempts.the answer to the question is "supernova". Moving on to the next question.\n')
+        hard_q2(score)
+
+# second question---------------------------------------------------------------------------------------------------
+def hard_q2(score):
+    attempt = 0
+    while attempt < 2:
+        second_a = input("What is the name of the force that opposes the gravitational collapse of massive objects,\n such as stars? ")
+        second_al = second_a.lower()
+        if second_al == 'nuclear fusion':
+            print("Hooray! You're absolutely right. Let's go to the next one!\n")
+            score +=1
+            hard_q3(score)  # the function for the next question is called here
+            break
+        else:
+            print('Oh no! Incorrect answer. Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Out of attempts.Th eright answer to the question is "nuclear fusion". Better luck next time. Moving on to the next question.\n')
+        hard_q3(score)
+
+# third question----------------------------------------------------------------------------------------------------
+def hard_q3(score):
+    attempt = 0
+    while attempt < 2:
+        third_a = input("What is the term for the hypothetical boundary around a black hole beyond which nothing can escape its gravitational pull? ")
+        third_al = third_a.lower()
+        if third_al == 'event horizon':
+            print("Oh yeah, you are right! Let's try the 4th question now!\n")
+            score +=1
+            hard_q4(score)
+            break
+        else:
+            print('Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print(' The right answer is "event horizon",Better luck next time. Moving on to the 4th question.\n')
+        hard_q4(score)
+
+# fourth question--------------------------------------------------------------------------------------------------
+
+def hard_q4(score):
+    attempt = 0
+    while attempt < 2:
+        fourth_a = input("What is the name of the process by which a star collapses to a point of infinite density and zero volume? ")
+        fourth_al = fourth_a.lower()
+        if fourth_al == 'singularity':
+            print("Cool! Now comes the trick question.\n")
+            score +=1
+            hard_q5(score)
+            break
+        else:
+            print('Uh oh, try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Not bad.The right answer ot the quesion is "singularity", Better luck next time.\n')
+        hard_q5(score)
+
+# 5th question------------------------------------------------------------------------------------------------------
+def hard_q5(score):
+    attempt = 0
+    while attempt < 2:
+        fifth_a = input("What is the name of the hypothetical substance that is thought to constitute approximately 85% of the matter in the universe, but cannot be directly detected? ")
+        fifth_al = fifth_a.lower()
+        if fifth_al == 'dark matter':
+            print("Amazing!!Dark matter is a form of matter that is thought to make up a significant portion of the total matter content in the universe,\n estimated to be around 85%. It is called 'dark' because it does not interact with light or other forms of electromagnetic radiation,\n making it invisible and difficult to detect directly. Despite its elusive nature, scientists infer the existence of dark matter through its gravitational effects on visible matter\n and the structure of the universe. The precise nature and composition of dark matter remain unknown,\n making it one of the biggest mysteries in astrophysics and cosmology.\n")
+            score +=1
+            print('total score is: ',score)
+            if score == 5:
+                print('you were incredible you got every question right!!,you are a quiz champion!!')
+            elif score == 4:
+                print("Great job! You scored 4 out of 5! You're almost a quiz champion!")
+            elif score == 3:
+                print('Your Score: 3 out of 5')
+            elif score == 2:
+                print('your score is 2 out of 5')
+            elif score == 1:
+                print('your score is 1 out of 5')
+            elif score ==0:
+                print("Oops! It looks like you scored 0 out of 5.\n Don't worry, you can always try again and improve your knowledge. Keep learning and challenging yourself!")
+            
+            break
+        else:
+            print('Try again!\n')
+            attempt += 1
+    if attempt == 2:
+        print('Not bad. Better luck next time.')
+        print("Amazing!!Dark matter is a form of matter that is thought to make up a significant portion of the total matter content in the universe,\n estimated to be around 85%. It is called 'dark' because it does not interact with light or other forms of electromagnetic radiation,\n making it invisible and difficult to detect directly. Despite its elusive nature, scientists infer the existence of dark matter through its gravitational effects on visible matter\n and the structure of the universe. The precise nature and composition of dark matter remain unknown,\n making it one of the biggest mysteries in astrophysics and cosmology.\n")
+            
+        
+        print('total score is: ',score)
+
+def main():
+    print("Welcome to 'ASTROVENTURE'")
+    input("Press enter to begin!")
+    print("Instructions: The game consists of three levels, each with varying difficulty.")
+    print('Select the level: Easy / Medium / Hard')
+
+    level = input().lower()
+
+    if level == 'easy':
+        easy_l1()
+    elif level == 'medium':
+        medium_l()
+    elif level == 'hard':
+        hard_l()
+    else:
+        print("Invalid choice. Please try again.")
+
+
+main()
