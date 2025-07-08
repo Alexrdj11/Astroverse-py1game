@@ -3,10 +3,10 @@ services:
     name: astroventure-quiz
     runtime: python3
     plan: free
-    buildCommand: pip install -r requirements-production.txt
-    startCommand: gunicorn app:app
+    buildCommand: pip install --upgrade pip && pip install -r requirements-render.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
     envVars:
       - key: GEMINI_API_KEY
         sync: false
-    domains:
-      - astroventure-quiz.onrender.com
+      - key: PYTHON_VERSION
+        value: "3.11.0"

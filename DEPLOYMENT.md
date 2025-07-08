@@ -36,8 +36,8 @@ git push -u origin main
 3. **Configure Deployment**
    - **Name**: `astroventure-quiz`
    - **Runtime**: `Python 3`
-   - **Build Command**: `pip install -r requirements-production.txt`
-   - **Start Command**: `gunicorn app:app`
+   - **Build Command**: `pip install --upgrade pip && pip install -r requirements-render.txt`
+   - **Start Command**: `gunicorn --bind 0.0.0.0:$PORT app:app`
    - **Plan**: `Free` (or paid for better performance)
 
 4. **Set Environment Variables**
@@ -68,8 +68,13 @@ FLASK_ENV=production
 ### Common Issues:
 
 **Build Fails**
-- Check if `requirements-production.txt` has correct dependencies
-- Make sure Python version is compatible
+- Check if `requirements-render.txt` has correct dependencies
+- Make sure Python version is compatible (3.11 specified in render.yaml)
+- If you see pywin32 errors, that's normal - it's Windows-specific and excluded from production
+
+**"No matching distribution found for pywin32"**
+- This is expected! pywin32 is Windows-only and not needed on Linux servers
+- Use `requirements-render.txt` which excludes Windows-specific packages
 
 **App Won't Start**
 - Verify `gunicorn app:app` command
