@@ -75,6 +75,16 @@
    
    Navigate to `http://127.0.0.1:5000` and start your cosmic adventure! 🌌
 
+## 🌐 Live Demo
+
+🚀 **[Play Astroventure Online](https://astroventure-quiz.onrender.com)** (Deployed on Render.com)
+
+> The live version generates unique AI questions every time you play!
+
+## 🚀 Deploy Your Own
+
+Want to deploy your own version? Check out our **[Deployment Guide](DEPLOYMENT.md)** for step-by-step instructions on deploying to Render.com for free!
+
 ## 🎯 How to Play
 
 ### Game Flow

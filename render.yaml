@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: astroventure-quiz
+    runtime: python3
+    plan: free
+    buildCommand: pip install -r requirements-production.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+    domains:
+      - astroventure-quiz.onrender.com
