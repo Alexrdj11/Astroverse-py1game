@@ -46,4 +46,5 @@ Thumbs.db
 *.log
 
 # Local development
+requirements-dev.txt
 requirements.txt
