@@ -1,12 +1,10 @@
 services:
   - type: web
     name: astroventure-quiz
-    env: python3
+    runtime: python3
     plan: free
-    buildCommand: |
-      python -m pip install --upgrade pip
-      pip install Flask==2.3.3 google-generativeai==0.3.2 python-dotenv==1.0.0 gunicorn==20.1.0
-    startCommand: gunicorn app:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
     envVars:
       - key: GEMINI_API_KEY
         sync: false
